@@ -19,6 +19,9 @@ quotes = finance.quotes_historical_yahoo_ohlc(ticker, startdate, enddate)
 # a numpy record array with fields: date, open, high, low, close, volume, adj_close)
 
 r = mlab.csv2rec(fh)
+
+print quotes[0]
+print r[0]
 fh.close()
 r.sort()
 
