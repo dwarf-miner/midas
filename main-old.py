@@ -13,16 +13,16 @@ if __name__ == '__main__':
     input = open('002415.pkl', 'rb')
     stocks = pickle.load(input)
     input.close()
-  except Exception, e:
+  except Exception:
     engine = YahooEngine()
     yahoo_requester = Requester(engine)
-    stocks = yahoo_requester.request('002415', ('1900-01-01', '2016-03-29'))
+    stocks = yahoo_requester.request('002415', ('1900-01-01', '2016-08-29'))
     output = open('002415.pkl', 'wb')
     pickle.dump(stocks, output, pickle.HIGHEST_PROTOCOL)
     output.close()
 
 for stock in stocks:
-    print stock
+    print(stock)
 
     # def test_parse(self):
     #     data = ("Date,Open,High,Low,Close,Volume,Adj Close\n" 

@@ -6,7 +6,7 @@
 #
 #         http://www.apache.org/licenses/LICENSE-2.0
 
-import urllib2
+import urllib.request
 
 
 class Requester(object):
@@ -38,11 +38,11 @@ class Requester(object):
         """
         
         stock_url = self._engine.get_url(stock_id, date)
-        print stock_url
+        print(stock_url)
 
-        request = urllib2.Request(stock_url)
+        request = urllib.request.Request(stock_url)
         request.add_header('Content-Type', 'application/json')
-        response = urllib2.urlopen(request)
+        response = urllib.request.urlopen(request)
         data = response.read()
 
         return self._engine.parse(data, stock_id)

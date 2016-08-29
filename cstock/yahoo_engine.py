@@ -60,7 +60,7 @@ class YahooEngine(Engine):
             if lineno == 1:
                 continue
 
-            values = line.split(',') 
+            values = line.decode("utf-8").split(',') 
             stocks.append(self._generate_stock(values, stock_id))
 
         return tuple(stocks)
