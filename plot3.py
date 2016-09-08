@@ -20,8 +20,8 @@ quotes = finance.quotes_historical_yahoo_ohlc(ticker, startdate, enddate)
 
 r = mlab.csv2rec(fh)
 
-print quotes[0]
-print r[0]
+print(quotes[0])
+print(r[0])
 fh.close()
 r.sort()
 

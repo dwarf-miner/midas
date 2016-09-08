@@ -1,6 +1,7 @@
 # system library
 import datetime
 import pickle
+import vision
 
 # project library
 from cstock.yahoo_engine import YahooEngine
